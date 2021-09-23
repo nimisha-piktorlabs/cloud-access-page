@@ -71,7 +71,7 @@ aside p {
     font-size: 0.8em;
 }
 .aside-top {
-    height: 60%;
+    /* height: 60%; */
     display: block;
 
     padding: 20px;
@@ -173,6 +173,7 @@ li.color-inactive span {
     font-weight: bold;
 }
 .card-container {
+    flex: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -184,7 +185,7 @@ li.color-inactive span {
     box-shadow: 0 1px 5px 0 rgba(126, 142, 177, 0.3);
     text-align: center;
     font-size: 12px;
-    margin-right: 6px;
+    margin-right: 3px;
 }
 .card-box-container {
     display: flex;
@@ -194,6 +195,9 @@ li.color-inactive span {
 }
 .card-box-container::-webkit-scrollbar {
     display: none;
+}
+.card-content {
+    text-align: left;
 }
 .card-container h3 {
     font-size: 12px;
@@ -342,10 +346,13 @@ tbody {
     width: 30px;
 }
 .table-groupname {
-    padding: 16px;
+    padding: 16px 10px;
     display: flex;
     /* display: inline-block; */
     align-content: center;
+}
+.table-div {
+    min-height: calc(100vh - 350px);
 }
 /* footer */
 .tfooter {
@@ -377,7 +384,8 @@ tbody {
         display: none;
     }
     #main {
-        width: 100%;
+        width: 100% !important;
+        padding: 0;
     }
     .notification {
         padding-right: 10px;
@@ -389,12 +397,17 @@ tbody {
         display: none;
     }
     .table-head {
-        flex-direction: row;
+        flex-direction: column;
 
         margin-bottom: 10px;
     }
     .input-group button {
         padding: 8px;
+    }
+    .input-group {
+        /* justify-content: space-between; */
+        display: flex;
+        flex: 1;
     }
 }
 
@@ -412,12 +425,12 @@ tbody {
     }
     .td-overflow-txt {
         white-space: nowrap;
-        /* text-overflow: ellipsis; */
+        text-overflow: ellipsis;
         overflow: hidden;
         width: 100px;
     }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 420px) {
     .aside-bottom-menu {
         padding: 10px 10px;
         font-size: 11px;
@@ -426,8 +439,20 @@ tbody {
         padding: 10px;
         height: 80%;
     }
+    aside {
+        width: 30%;
+    }
+    #main {
+        width: 70%;
+    }
 
     aside p {
         padding-bottom: 0;
+    }
+    td:nth-child(4) {
+        display: none;
+    }
+    .createdon-tb-d-none {
+        display: none;
     }
 }
