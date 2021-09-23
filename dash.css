@@ -71,7 +71,7 @@ aside p {
     font-size: 0.8em;
 }
 .aside-top {
-    height: 70%;
+    height: 60%;
     display: block;
 
     padding: 20px;
@@ -87,6 +87,8 @@ aside p {
 .aside-bottom-menu {
     padding: 10px 20px;
     font-size: 12px;
+    display: flex;
+    align-items: center;
 }
 .aside-bottom-menu span {
     margin-left: 5px;
@@ -95,6 +97,7 @@ aside p {
     background-color: #ea168b;
     color: #fff;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 ul.main-menu li {
@@ -132,14 +135,18 @@ li.color-inactive span {
 }
 
 .aside-top hr {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 25px;
+    margin-bottom: 15px;
     border-top: 0.1px #bbb;
 }
 .aside-top-middle,
 .aside-top-end {
     /* border-top: 1px solid #bbb;
     padding-top: 10px; */
+}
+.font-size {
+    font-size: 12px;
+    font-weight: bold;
 }
 /*section*/
 .all-group-top {
@@ -209,6 +216,7 @@ li.color-inactive span {
     overflow: hidden;
     width: 100px;
 }
+
 /* table begins  */
 
 .table-container {
@@ -262,6 +270,13 @@ input::-webkit-input-placeholder {
 }
 
 /* table */
+thead,
+tbody,
+tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
 tbody::-webkit-scrollbar {
     display: none;
 }
@@ -297,9 +312,9 @@ table button:hover {
     cursor: pointer;
 }
 table img {
-    height: 20px;
+    /* height: 20px;
     width: 20px;
-    top: 5px;
+    top: 5px; */
     position: relative;
 }
 
@@ -308,7 +323,10 @@ th {
     padding: 10px;
     text-align: left;
 }
-td a:link {
+.text-align-center {
+    text-align: center;
+}
+td a {
     color: #ea168b;
     padding-left: 8px;
 }
@@ -319,6 +337,35 @@ tbody {
     display: block;
     overflow-y: scroll;
     max-height: 200px;
+}
+.inputcheckbox-td {
+    width: 30px;
+}
+.table-groupname {
+    padding: 16px;
+    display: flex;
+    /* display: inline-block; */
+    align-content: center;
+}
+/* footer */
+.tfooter {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tfooter span {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 12px;
+    color: grey;
+}
+
+.tfooter input {
+    width: 1.5rem;
+    height: 1rem;
+    margin: 0px 5px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -338,13 +385,16 @@ tbody {
     td:nth-child(4) {
         display: none;
     }
-    .createdon {
+    .d-none {
         display: none;
     }
     .table-head {
-        flex-direction: column;
+        flex-direction: row;
 
         margin-bottom: 10px;
+    }
+    .input-group button {
+        padding: 8px;
     }
 }
 
@@ -352,12 +402,32 @@ tbody {
     aside {
         font-size: 2em;
     }
+    .aside-top {
+        height: 70%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .aside-top {
+        height: 70%;
+    }
+    .td-overflow-txt {
+        white-space: nowrap;
+        /* text-overflow: ellipsis; */
+        overflow: hidden;
+        width: 100px;
+    }
 }
 @media only screen and (max-width: 768px) {
     .aside-bottom-menu {
         padding: 10px 10px;
+        font-size: 11px;
     }
     .aside-top {
         padding: 10px;
+        height: 80%;
+    }
+
+    aside p {
+        padding-bottom: 0;
     }
 }
