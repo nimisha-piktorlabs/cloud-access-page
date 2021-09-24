@@ -18,6 +18,7 @@ header {
     height: 55px;
     display: flex;
     justify-content: space-between;
+    padding: 0px 30px;
 }
 main {
     display: flex;
@@ -31,6 +32,7 @@ aside {
 aside h4 {
     font-size: 11px;
     font-weight: bold;
+    letter-spacing: 0.3px;
 }
 aside p {
     font-size: 12px;
@@ -50,7 +52,6 @@ aside p {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0px 30px;
 }
 
 .color-pink {
@@ -69,6 +70,11 @@ aside p {
 .user-name {
     text-align: center;
     font-size: 0.8em;
+}
+.second-name {
+    font-size: 10px;
+    opacity: 0.5;
+    color: gray;
 }
 .aside-top {
     /* height: 60%; */
@@ -101,7 +107,7 @@ aside p {
 }
 
 ul.main-menu li {
-    font-size: 12px;
+    font-size: 13px;
     padding-top: 8px;
     padding-bottom: 8px;
     font-weight: bold;
@@ -149,11 +155,14 @@ li.color-inactive span {
     font-weight: bold;
 }
 /*section*/
+.all-group-top-hr {
+    margin-top: 12px;
+    border-top: 0.1px #aba4a4;
+}
 .all-group-top {
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #bbbb;
+    letter-spacing: 2px;
 }
 .all-group-top hr {
     margin-top: 10px;
@@ -169,7 +178,7 @@ li.color-inactive span {
 .recomented-groups {
     color: #676767;
     font-size: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 1.67px;
     font-weight: bold;
 }
 .card-container {
@@ -202,10 +211,12 @@ li.color-inactive span {
 .card-container h3 {
     font-size: 12px;
     color: #4a4a4a;
+    font-weight: 500;
 }
 .card-container p {
     font-size: 11px;
     color: #9c9ea0;
+    opacity: 0.5;
 }
 .group-icon img {
     width: 25px;
@@ -262,6 +273,7 @@ li.color-inactive span {
     height: 30px;
     border: solid 1px #dee3e6;
     border-radius: 3px;
+    font-size: 12px;
 }
 input::-webkit-input-placeholder {
     /* WebKit browsers */
@@ -293,6 +305,7 @@ th {
     background-color: #dee3e6;
     color: #000000;
     font-size: 10px;
+    letter-spacing: 0.5;
 }
 td {
     text-align: center;
@@ -378,7 +391,7 @@ tbody {
 @media only screen and (max-width: 425px) {
     .header-left,
     .header-right {
-        padding: 0px 10px;
+        padding: 0px 0px;
     }
     .hide-mobile {
         display: none;
@@ -423,7 +436,7 @@ tbody {
     .aside-top {
         height: 70%;
     }
-    .td-overflow-txt {
+    .td-overflow-txt a {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
