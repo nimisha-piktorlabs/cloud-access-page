@@ -9,6 +9,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: Roboto, sans-serif;
@@ -25,7 +26,7 @@ main {
     height: calc(100vh - 55px);
 }
 aside {
-    width: 20%;
+    width: 13.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +44,7 @@ aside p {
     padding-bottom: 12px;
 }
 #main {
-    width: 80%;
+    width: calc(100% - 13.5rem);
     background-color: #e9e9e9;
     padding: 22px;
 }
@@ -355,7 +356,7 @@ td a {
 tbody {
     display: block;
     overflow-y: scroll;
-    max-height: 330px;
+    max-height: 250px;
 }
 .inputcheckbox-td {
     width: 30px;
@@ -366,9 +367,9 @@ tbody {
     /* display: inline-block; */
     align-content: center;
 }
-/* .table-div {
-    min-height: calc(100vh - 400px);
-} */
+.table-div {
+    min-height: calc(100vh - 350px);
+}
 /* footer */
 .tfooter {
     width: 100%;
@@ -389,6 +390,17 @@ tbody {
     height: 1rem;
     margin: 0px 5px;
 }
+@media only screen and (max-width: 320px) {
+    .hide-mobile {
+        display: none;
+    }
+    .table-head span {
+        font-size: 10.5px;
+    }
+    .input-group input {
+        width: 110px;
+    }
+}
 
 @media only screen and (max-width: 425px) {
     .header-left,
@@ -400,7 +412,8 @@ tbody {
     }
     #main {
         width: 100% !important;
-        padding: 0;
+        /* padding: 0; */
+        padding: 2px;
     }
     .notification {
         padding-right: 10px;
@@ -412,20 +425,23 @@ tbody {
         display: none;
     }
     .table-head {
-        flex-direction: column;
+        flex-direction: row;
 
         margin-bottom: 10px;
     }
     .input-group button {
         padding: 8px;
+        width: 95px;
     }
     .input-group {
-        /* justify-content: space-between; */
+        justify-content: space-between;
         display: flex;
-        flex: 1;
+        /* flex: 1; */
+    }
+    .input-group input {
+        width: 150px;
     }
 }
-
 @media only screen and (min-width: 1600px) {
     aside {
         font-size: 2em;
