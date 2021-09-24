@@ -355,7 +355,7 @@ td a {
 tbody {
     display: block;
     overflow-y: scroll;
-    max-height: 250px;
+    max-height: 330px;
 }
 .inputcheckbox-td {
     width: 30px;
@@ -366,9 +366,9 @@ tbody {
     /* display: inline-block; */
     align-content: center;
 }
-.table-div {
+/* .table-div {
     min-height: calc(100vh - 400px);
-}
+} */
 /* footer */
 .tfooter {
     width: 100%;
