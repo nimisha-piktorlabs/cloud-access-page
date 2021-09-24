@@ -274,6 +274,8 @@ li.color-inactive span {
     border: solid 1px #dee3e6;
     border-radius: 3px;
     font-size: 12px;
+    outline-color: #ea168b;
+    opacity: 0.5;
 }
 input::-webkit-input-placeholder {
     /* WebKit browsers */
@@ -353,7 +355,7 @@ td a {
 tbody {
     display: block;
     overflow-y: scroll;
-    max-height: 200px;
+    max-height: 250px;
 }
 .inputcheckbox-td {
     width: 30px;
@@ -365,7 +367,7 @@ tbody {
     align-content: center;
 }
 .table-div {
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 400px);
 }
 /* footer */
 .tfooter {
