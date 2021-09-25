@@ -2,10 +2,12 @@
     --primary-color: #ea168b;
     --black-color: #3e3e3e;
     --ash-color: #4a4a4a;
-    --aside-font-size: 11px;
+    --aside-font-size: 0.68rem;
     --aside-p-color: #dfe3e7;
 }
-
+html {
+    font-size: 16px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -13,17 +15,24 @@
 }
 body {
     font-family: Roboto, sans-serif;
+    height: 100vh;
 }
 header {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
-    height: 55px;
+    height: 9%;
     display: flex;
     justify-content: space-between;
     padding: 0px 30px;
 }
+.header-left,
+.header-right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 main {
     display: flex;
-    height: calc(100vh - 55px);
+    height: calc(100vh - 9%);
 }
 aside {
     width: 13.5rem;
@@ -31,28 +40,15 @@ aside {
     flex-direction: column;
 }
 aside h4 {
-    font-size: 11px;
+    font-size: 0.68rem;
     font-weight: bold;
     letter-spacing: 0.3px;
 }
-aside p {
-    font-size: 12px;
-    font-weight: normal;
-    color: #9c9ea0;
-    padding-top: 10px;
 
-    padding-bottom: 12px;
-}
 #main {
     width: calc(100% - 13.5rem);
     background-color: #e9e9e9;
     padding: 22px;
-}
-.header-left,
-.header-right {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .color-pink {
@@ -73,18 +69,37 @@ aside p {
     font-size: 0.8em;
 }
 .second-name {
-    font-size: 10px;
+    font-size: 0.625rem;
     opacity: 0.5;
     color: gray;
 }
+/* header end  */
+
 .aside-top {
     /* height: 60%; */
     display: block;
 
     padding: 20px;
 }
+/* newww */
+.aside-top__elem {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #9c9ea0;
+    padding-top: 0.62rem;
+
+    /* padding-bottom: 12px; */
+}
+.aside-top-middle {
+    margin-top: 1.87rem;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    padding-top: 1.81rem;
+    margin-bottom: 1.87rem;
+}
+/* new aside end  */
 .main-menu {
-    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
     list-style: none;
 }
 .aside-bottom {
@@ -93,7 +108,7 @@ aside p {
 }
 .aside-bottom-menu {
     padding: 10px 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
     display: flex;
     align-items: center;
 }
@@ -122,9 +137,11 @@ ul.main-menu li:hover .count {
     color: white;
     background-color: var(--primary-color);
     transition: 0.5s;
+    cursor: pointer;
 }
 ul.main-menu li:hover .li-text {
     color: #ea168b;
+    cursor: pointer;
 
     transition: 0.5s;
 }
@@ -132,7 +149,8 @@ ul.main-menu li:hover .li-text {
     border-radius: 50%;
     background-color: #ea168b;
     color: white;
-    padding: 0 7px;
+    padding: 0 0.45rem;
+    height: 1.25rem;
 }
 li.color-inactive .count {
     background-color: #bbb;
@@ -151,22 +169,20 @@ li.color-inactive span {
     /* border-top: 1px solid #bbb;
     padding-top: 10px; */
 }
-.font-size {
-    font-size: 12px;
+.font-size-12b {
+    font-size: 0.75rem;
     font-weight: bold;
 }
 /*section*/
 .all-group-top-hr {
-    margin-top: 12px;
+    margin-top: 0.75rem;
     border-top: 0.1px #aba4a4;
 }
 .all-group-top {
-    font-size: 12px;
-    font-weight: bold;
     letter-spacing: 2px;
 }
 .all-group-top hr {
-    margin-top: 10px;
+    margin-top: 0.625rem;
     color: #9e9e9e;
     border-top: 0.2px;
 }
@@ -174,34 +190,62 @@ li.color-inactive span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
+/* card top */
 .recomented-groups {
     color: #676767;
-    font-size: 10px;
+    font-size: 0.625rem;
     letter-spacing: 1.67px;
     font-weight: bold;
 }
+i.fal.fa-angle-left {
+    width: 1.125rem;
+    border-radius: 0.625rem;
+    background-color: #dfe3e7;
+    color: #bbb;
+    padding: 0.1rem 0.4rem;
+    height: 1.125rem;
+    margin: 0 5px 0 0;
+    text-align: center;
+    flex-grow: 0;
+}
+i.fal.fa-angle-right {
+    width: 1.125rem;
+    border-radius: 0.625rem;
+    background-color: #dfe3e7;
+    color: #bbb;
+    padding: 0.1rem 0.4rem;
+    height: 1.125rem;
+    margin: 0 5px 0 0;
+    text-align: center;
+    flex-grow: 0;
+}
+i.fal.fa-angle-left:hover,
+i.fal.fa-angle-right:hover {
+    background-color: #ea168b;
+}
+/* card top end  */
 .card-container {
     flex: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    max-width: 310px;
-    min-width: 210px;
-    height: 60px;
+    /* max-width: 310px; */
+    min-width: 13.12rem;
+    height: 3.75rem;
     background-color: #ffff;
     border-radius: 4px;
     box-shadow: 0 1px 5px 0 rgba(126, 142, 177, 0.3);
     text-align: center;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-right: 3px;
 }
 .card-box-container {
     display: flex;
     justify-content: space-between;
     overflow-x: auto;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 .card-box-container::-webkit-scrollbar {
     display: none;
@@ -210,12 +254,12 @@ li.color-inactive span {
     text-align: left;
 }
 .card-container h3 {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #4a4a4a;
     font-weight: 500;
 }
 .card-container p {
-    font-size: 11px;
+    font-size: 0.68rem;
     color: #9c9ea0;
     opacity: 0.5;
 }
@@ -238,8 +282,8 @@ li.color-inactive span {
 .table-container {
     background-color: #fff;
     display: block;
-    padding: 20;
-    margin-top: 20px;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
 }
 .table-head {
     display: flex;
@@ -248,7 +292,7 @@ li.color-inactive span {
 }
 .table-head span {
     display: block;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -259,6 +303,7 @@ li.color-inactive span {
     height: 30px;
     border-radius: 3px;
     border: none;
+    margin-left: 0.62rem;
 }
 .input-group button:hover {
     color: #ea168b;
@@ -274,7 +319,7 @@ li.color-inactive span {
     height: 30px;
     border: solid 1px #dee3e6;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 0.75rem;
     outline-color: #ea168b;
     opacity: 0.5;
 }
@@ -307,12 +352,12 @@ table {
 th {
     background-color: #dee3e6;
     color: #000000;
-    font-size: 10px;
+    font-size: 0.625rem;
     letter-spacing: 0.5;
 }
 td {
     text-align: center;
-    font-size: 12px;
+    font-size: 0.75rem;
     border-bottom: 1px solid #dfe3e7;
 }
 table button {
@@ -322,7 +367,7 @@ table button {
     border: solid 1px #ea168b;
     background-color: #fff;
     color: #ea168b;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 table button:hover {
     border-radius: 3px;
@@ -340,7 +385,7 @@ table img {
 
 td,
 th {
-    padding: 10px;
+    padding: 0.625rem;
     text-align: left;
 }
 .text-align-center {
@@ -354,21 +399,25 @@ td a {
     color: #ea168b;
 }
 tbody {
+    max-height: calc(100vh - 25rem);
     display: block;
     overflow-y: scroll;
-    max-height: 250px;
+    /* max-height: 250px; */
 }
 .inputcheckbox-td {
     width: 30px;
 }
+.inputcheckbox-td:hover {
+    cursor: pointer;
+}
 .table-groupname {
-    padding: 16px 10px;
+    padding: 1rem 0.625rem;
     display: flex;
     /* display: inline-block; */
     align-content: center;
 }
 .table-div {
-    min-height: calc(100vh - 350px);
+    /* min-height: calc(100vh - 350px); */
 }
 /* footer */
 .tfooter {
@@ -381,7 +430,7 @@ tbody {
     display: flex;
     align-items: center;
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: grey;
 }
 
@@ -413,10 +462,10 @@ tbody {
     #main {
         width: 100% !important;
         /* padding: 0; */
-        padding: 2px;
+        /* padding: 2px; */
     }
     .notification {
-        padding-right: 10px;
+        padding-right: 0.625rem;
     }
     td:nth-child(4) {
         display: none;
@@ -427,7 +476,7 @@ tbody {
     .table-head {
         flex-direction: row;
 
-        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
     }
     .input-group button {
         padding: 8px;
@@ -438,9 +487,9 @@ tbody {
         display: flex;
         /* flex: 1; */
     }
-    .input-group input {
+    /* .input-group input {
         width: 150px;
-    }
+    } */
 }
 @media only screen and (min-width: 1600px) {
     aside {
@@ -463,19 +512,19 @@ tbody {
 }
 @media only screen and (max-width: 768px) and (min-width: 420px) {
     .aside-bottom-menu {
-        padding: 10px 10px;
-        font-size: 11px;
+        padding: 0.625rem 0.625rem;
+        font-size: 0.68rem;
     }
     .aside-top {
-        padding: 10px;
-        height: 80%;
+        padding: 0.625rem;
+        /* height: 80%; */
     }
-    aside {
+    /* aside {
         width: 30%;
     }
     #main {
         width: 70%;
-    }
+    } */
 
     aside p {
         padding-bottom: 0;
