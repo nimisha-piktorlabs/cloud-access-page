@@ -505,22 +505,27 @@ tbody {
         display: flex;
         /* flex: 1; */
     }
-    /* .input-group input {
+    .input-group input {
         width: 150px;
-    } */
+    }
+}
+@media only screen and (max-width: 375px) {
+    .table-head {
+        flex-direction: column;
+    }
 }
 @media only screen and (min-width: 1600px) {
     aside {
         font-size: 2em;
     }
-    .aside-top {
+    /* .aside-top {
         height: 70%;
-    }
+    } */
 }
 @media only screen and (max-width: 1024px) {
-    .aside-top {
+    /* .aside-top {
         height: 70%;
-    }
+    } */
     .td-overflow-txt a {
         white-space: nowrap;
         text-overflow: ellipsis;
