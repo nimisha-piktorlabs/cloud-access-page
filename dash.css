@@ -30,6 +30,15 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
+.notification img:hover {
+    cursor: pointer;
+}
+.user-name:hover {
+    cursor: pointer;
+}
+.profile:hover {
+    cursor: pointer;
+}
 main {
     display: flex;
     height: calc(100vh - 9%);
@@ -151,6 +160,9 @@ ul.main-menu li:hover .li-text {
     color: white;
     padding: 0 0.45rem;
     height: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 li.color-inactive .count {
     background-color: #bbb;
@@ -224,6 +236,7 @@ i.fal.fa-angle-right {
 i.fal.fa-angle-left:hover,
 i.fal.fa-angle-right:hover {
     background-color: #ea168b;
+    cursor: pointer;
 }
 /* card top end  */
 .card-container {
@@ -240,6 +253,9 @@ i.fal.fa-angle-right:hover {
     text-align: center;
     font-size: 0.75rem;
     margin-right: 3px;
+}
+.card-container:hover {
+    cursor: pointer;
 }
 .card-box-container {
     display: flex;
@@ -341,6 +357,9 @@ tr {
     width: 100%;
     table-layout: fixed;
 }
+tr {
+    border-bottom: 1px solid #dfe3e7;
+}
 tbody::-webkit-scrollbar {
     display: none;
 }
@@ -358,7 +377,6 @@ th {
 td {
     text-align: center;
     font-size: 0.75rem;
-    border-bottom: 1px solid #dfe3e7;
 }
 table button {
     width: 78.1px;
