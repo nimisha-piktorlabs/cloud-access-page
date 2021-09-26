@@ -30,6 +30,10 @@ header {
     justify-content: space-evenly;
     align-items: center;
 }
+.logo-txt {
+    font-size: 1rem;
+    font-weight: 800;
+}
 .notification img:hover {
     cursor: pointer;
 }
@@ -73,9 +77,11 @@ aside h4 {
 .notification {
     padding-right: 20px;
 }
+.first-name {
+    font-size: 0.87rem;
+}
 .user-name {
     text-align: center;
-    font-size: 0.8em;
 }
 .second-name {
     font-size: 0.625rem;
@@ -132,9 +138,9 @@ aside h4 {
 }
 
 ul.main-menu li {
-    font-size: 13px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    font-size: 0.813rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     font-weight: bold;
 }
 ul.main-menu li a {
@@ -290,7 +296,7 @@ i.fal.fa-angle-right:hover {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 100px;
+    width: 6.25rem;
 }
 
 /* table begins  */
@@ -425,7 +431,7 @@ tbody {
 .inputcheckbox-td {
     width: 30px;
 }
-.inputcheckbox-td:hover {
+#checkbox:hover {
     cursor: pointer;
 }
 .table-groupname {
@@ -436,6 +442,12 @@ tbody {
 }
 .table-div {
     /* min-height: calc(100vh - 350px); */
+}
+.td-overflow-txt a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 9.375rem;
 }
 /* footer */
 .tfooter {
@@ -515,8 +527,17 @@ tbody {
     }
 }
 @media only screen and (min-width: 1600px) {
+    html {
+        font-size: 24px;
+    }
     aside {
         font-size: 2em;
+    }
+    .overflow-txt {
+        width: 10rem;
+    }
+    .td-overflow-txt a {
+        width: 10rem;
     }
     /* .aside-top {
         height: 70%;
@@ -530,7 +551,7 @@ tbody {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: 100px;
+        width: 9.375rem;
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 420px) {
