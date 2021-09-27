@@ -5,7 +5,6 @@
     --aside-font-size: 0.68rem;
     --aside-p-color: #dfe3e7;
 }
-/* hhhh */
 html {
     font-size: 16px;
 }
@@ -57,12 +56,13 @@ aside h4 {
     font-size: 0.68rem;
     font-weight: bold;
     letter-spacing: 0.3px;
+    margin-bottom: 0.625rem;
 }
 
 #main {
     width: calc(100% - 13.5rem);
     background-color: #e9e9e9;
-    padding: 22px;
+    padding: 1.37rem;
 }
 
 .color-pink {
@@ -95,7 +95,7 @@ aside h4 {
     /* height: 60%; */
     display: block;
 
-    padding: 20px;
+    padding: 1.25rem;
 }
 /* newww */
 .aside-top__elem {
@@ -123,13 +123,17 @@ aside h4 {
     flex-direction: column;
 }
 .aside-bottom-menu {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     font-size: 0.75rem;
     display: flex;
     align-items: center;
 }
+.aside-bottom-menu img{
+    width: 0.938rem;
+    height: 00.938rem;
+}
 .aside-bottom-menu span {
-    margin-left: 5px;
+    margin-left: 0.313rem;
 }
 .aside-bottom-menu:hover {
     background-color: #ea168b;
@@ -156,7 +160,7 @@ ul.main-menu li:hover .count {
     cursor: pointer;
 }
 ul.main-menu li:hover .li-text {
-    color: #ea168b;
+    color: #4a4a4a;
     cursor: pointer;
 
     transition: 0.5s;
@@ -259,7 +263,7 @@ i.fal.fa-angle-right:hover {
     box-shadow: 0 1px 5px 0 rgba(126, 142, 177, 0.3);
     text-align: center;
     font-size: 0.75rem;
-    margin-right: 3px;
+    margin-right: 0.188rem;
 }
 .card-container:hover {
     cursor: pointer;
@@ -287,10 +291,10 @@ i.fal.fa-angle-right:hover {
     opacity: 0.5;
 }
 .group-icon img {
-    width: 25px;
+    width: 1.56rem;
 }
 .plus-img-containeer img {
-    width: 22px;
+    width: 1.375rem;
 }
 /* over flow text */
 .overflow-txt {
@@ -322,11 +326,12 @@ i.fal.fa-angle-right:hover {
 .input-group button {
     color: #fff;
     background-color: #ea168b;
-    width: 105.2px;
-    height: 30px;
+    width: 6.575rem;
+    height: 1.875rem;
     border-radius: 3px;
     border: none;
     margin-left: 0.62rem;
+    font-size: 0.75rem;
 }
 .input-group button:hover {
     color: #ea168b;
@@ -338,10 +343,10 @@ i.fal.fa-angle-right:hover {
 
 .input-group input {
     padding-left: 1.9rem;
-    width: 200px;
-    height: 30px;
+    width: 12.5rem;
+    height: 1.875rem;
     border: solid 1px #dee3e6;
-    border-radius: 3px;
+    border-radius: 0.188rem;
     font-size: 0.75rem;
     outline-color: #ea168b;
     opacity: 0.5;
@@ -386,8 +391,8 @@ td {
     font-size: 0.75rem;
 }
 table button {
-    width: 78.1px;
-    height: 25px;
+    width: 4.88rem;
+    height: 1.56rem;
     border-radius: 3px;
     border: solid 1px #ea168b;
     background-color: #fff;
@@ -405,6 +410,8 @@ table img {
     /* height: 20px;
     width: 20px;
     top: 5px; */
+    width: 1rem;
+    height: 1rem;
     position: relative;
 }
 
@@ -418,7 +425,7 @@ th {
 }
 td a {
     color: #ea168b;
-    padding-left: 8px;
+    padding-left: 0.5rem;
 }
 .fa-user {
     color: #ea168b;
@@ -430,11 +437,24 @@ tbody {
     /* max-height: 250px; */
 }
 .inputcheckbox-td {
-    width: 30px;
+    width: 1.85rem;
 }
 #checkbox:hover {
     cursor: pointer;
 }
+/* On mouse-over, add a grey background color */
+input.checkbox:hover  {
+    background-color: green;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+   input.checkbox:checked   {
+    background-color: red;
+  }
+  .checkbox{
+      width: 0.813rem;
+      height: 0.813rem;
+  }
 .table-groupname {
     padding: 1rem 0.625rem;
     display: flex;
@@ -460,7 +480,7 @@ tbody {
 .tfooter span {
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 1.25rem;
     font-size: 0.75rem;
     color: grey;
 }
@@ -519,7 +539,7 @@ tbody {
         margin-bottom: 6px;
     }
     .input-group input {
-        width: 110px;
+        width: 130px;
     }
 }
 @media only screen and (max-width: 375px) {
@@ -530,7 +550,7 @@ tbody {
 }
 @media only screen and (min-width: 1600px) {
     html {
-        font-size: 24px;
+        font-size: 30px;
     }
     aside {
         font-size: 2em;
@@ -540,6 +560,14 @@ tbody {
     }
     .td-overflow-txt a {
         width: 10rem;
+    }
+    .card-container {
+        padding: 0.5rem;
+    }
+    .card-content{
+        margin-left: 0.75rem;
+        margin-right: 0.93rem;
+
     }
     /* .aside-top {
         height: 70%;
