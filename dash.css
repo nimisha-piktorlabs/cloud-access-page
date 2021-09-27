@@ -470,7 +470,7 @@ tbody {
     margin: 0px 5px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 767px) {
     .header-left,
     .header-right {
         padding: 0px 0px;
@@ -515,7 +515,7 @@ tbody {
         display: none;
     }
     .table-head span {
-        /* font-size: 10.5px; */
+        margin-bottom: 6px;
     }
     .input-group input {
         width: 110px;
@@ -556,19 +556,13 @@ tbody {
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 420px) {
-    .aside-bottom-menu {
+    /* .aside-bottom-menu {
         padding: 0.625rem 0.625rem;
         font-size: 0.68rem;
-    }
-    .aside-top {
+    } */
+    /* .aside-top {
         padding: 0.625rem;
-        /* height: 80%; */
-    }
-    /* aside {
-        width: 30%;
-    }
-    #main {
-        width: 70%;
+       
     } */
 
     aside p {
