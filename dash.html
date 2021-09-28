@@ -12,7 +12,7 @@
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossorigin="anonymous"
         />
-        <script type="text/javascript" src="dash.js"></script>
+       
     </head>
 
     <body>
@@ -249,7 +249,9 @@
                                             onclick="toggle(this)"
                                         />
                                     </th>
-                                    <th>GROUP NAME</th>
+                                    <th class="th-grpname">GROUP NAME
+                                        <img src="images/sorting.svg" alt="img" onclick="sortTable()">
+                                    </th>
                                     <th class="d-none">GROUP OWNER</th>
                                     <th class="d-none createdon-tb-d-none">
                                         CREATED ON
@@ -257,7 +259,7 @@
                                     <th class="text-align-center">ACTION</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tbodyId">
                                 <tr>
                                     <td class="inputcheckbox-td">
                                         <input type="checkbox" id="checkbox" class="checkbox" name="checkbox" />
@@ -556,19 +558,25 @@
                     <div class="tfooter">
                         <span
                             >Showing 10-20 | GoTo <input /> |
-                            <img
+                            <!-- <img
                                 style="margin-left: 0.25rem"
                                 src="images/Arrow_back.svg"
                                 alt="img!"
-                            />
-                            <strong class="color-pink" style="margin: 0px 0.25rem"
+                            /> -->
+                            <!-- <strong class="color-pink" style="margin: 0px 0.25rem"
                                 >1</strong
-                            >
-                            2 3 4 5</span
-                        >
+                            > -->
+                            <i class="fal fa-angle-left" id="prev"
+                            ></i>
+                            <ul id="tfooterul" class="tfooterul">
+
+                            </ul>
+                            <i class="fal fa-angle-left" id="nxt"></i>
+                            </span>
                     </div>
                 </div>
             </section>
         </main>
+        <script type="text/javascript" src="dash.js"></script>
     </body>
 </html>
