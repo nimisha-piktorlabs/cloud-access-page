@@ -12,11 +12,13 @@
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossorigin="anonymous"
         />
+        <script type="text/javascript" src="dash.js"></script>
     </head>
 
     <body>
         <header>
             <div class="header-left">
+                <a href="#" onclick="showAside()" class="menu-baricon"><i class="fa fa-bars" id="close"></i></a>
                 <img src="images/cloud.jpg" alt="" />
                 <span class="color-pink lr-p-3 hide-mobile logo-txt"
                     >CLOUD
@@ -37,7 +39,7 @@
             </div>
         </header>
         <main>
-            <aside class="hide-mobile">
+            <aside class="hide-mobile" id="aside">
                 <div class="aside-top">
                     <div class="aside-top-start">
                         <h4 class="color-pink">YOUR GROUPS/PACKS</h4>
@@ -48,7 +50,7 @@
                     </div>
                     <div class="aside-top-middle">
                         <h4 class="color-pink font-size">YOUR REQUESTS</h4>
-                        <ul class="main-menu">
+                        <ul class="main-menu" id="main-menu">
                             <li class="color-inactive">
                                 <a>
                                     <span class="li-text">Pending</span>
@@ -77,8 +79,8 @@
                         >
                     </div>
                 </div>
-                <div class="aside-bottom">
-                    <div class="aside-bottom-menu">
+                <div class="aside-bottom" id="aside-bottom">
+                    <div class="aside-bottom-menu active">
                         <img src="images/Group_icon.svg" alt="" />
                         <span>ALL GROUPS</span>
                     </div>
@@ -97,11 +99,11 @@
                 <div class="card-top-nav">
                     <span class="recomented-groups"> RECOMMENTED GROUPS</span>
                     <div class="top-arrow-container">
-                        <i class="fal fa-angle-left"></i>
-                        <i class="fal fa-angle-right"></i>
+                        <i class="fal fa-angle-left" onclick="scrollleft()"></i>
+                        <i class="fal fa-angle-right" onclick="scrollright()"></i>
                     </div>
                 </div>
-                <div class="card-box-container">
+                <div class="card-box-container" id="card">
                     <div class="card-container">
                         <div class="group-icon">
                             <img src="images/Group_icon.svg" alt="" />
@@ -227,6 +229,7 @@
                             <input
                                 type="text"
                                 id="find-group"
+                                onkeyup="searchTable()"
                                 placeholder="Find a group"
                                 required
                             />
@@ -234,7 +237,7 @@
                         </div>
                     </div>
                     <div class="table-div">
-                        <table>
+                        <table id="table">
                             <thead>
                                 <tr>
                                     <th class="inputcheckbox-td">
@@ -243,6 +246,7 @@
                                             id="checkbox"
                                             value=" "
                                             class="checkbox"
+                                            onclick="toggle(this)"
                                         />
                                     </th>
                                     <th>GROUP NAME</th>
@@ -256,7 +260,7 @@
                             <tbody>
                                 <tr>
                                     <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox" />
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox" />
                                     </td>
                                     <td class="table-groupname td-overflow-txt">
                                         <img
@@ -283,7 +287,61 @@
                                 </tr>
                                 <tr>
                                     <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
+                                    </td>
+                                    <td class="table-groupname td-overflow-txt">
+                                        <img
+                                            src="images/Group_icon.svg"
+                                            alt="grp_icon"
+                                        />
+                                        <a
+                                            href="#"
+                                            title="ABC Security GroupGroup2"
+                                            >Alexa Security GroupGroup2</a
+                                        >
+                                    </td>
+                                    <td class="d-none">
+                                        <i
+                                            class="fa fa-user"
+                                            aria-hidden="true"
+                                        ></i>
+                                        &nbsp;&nbsp; <u>John Smith</u>
+                                    </td>
+                                    <td>08/03/2021</td>
+                                    <td class="text-align-center">
+                                        <button>+ Join</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="inputcheckbox-td">
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
+                                    </td>
+                                    <td class="table-groupname td-overflow-txt">
+                                        <img
+                                            src="images/Group_icon.svg"
+                                            alt="grp_icon"
+                                        />
+                                        <a
+                                            href="#"
+                                            title="ABC Security GroupGroup2"
+                                            >Berglunds snabbkop GroupGroup2</a
+                                        >
+                                    </td>
+                                    <td class="d-none">
+                                        <i
+                                            class="fa fa-user"
+                                            aria-hidden="true"
+                                        ></i>
+                                        &nbsp;&nbsp; <u>John Smith</u>
+                                    </td>
+                                    <td>08/03/2021</td>
+                                    <td class="text-align-center">
+                                        <button>+ Join</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="inputcheckbox-td">
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
                                     </td>
                                     <td class="table-groupname td-overflow-txt">
                                         <img
@@ -310,61 +368,7 @@
                                 </tr>
                                 <tr>
                                     <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
-                                    </td>
-                                    <td class="table-groupname td-overflow-txt">
-                                        <img
-                                            src="images/Group_icon.svg"
-                                            alt="grp_icon"
-                                        />
-                                        <a
-                                            href="#"
-                                            title="ABC Security GroupGroup2"
-                                            >ABC Security GroupGroup2</a
-                                        >
-                                    </td>
-                                    <td class="d-none">
-                                        <i
-                                            class="fa fa-user"
-                                            aria-hidden="true"
-                                        ></i>
-                                        &nbsp;&nbsp; <u>John Smith</u>
-                                    </td>
-                                    <td>08/03/2021</td>
-                                    <td class="text-align-center">
-                                        <button>+ Join</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
-                                    </td>
-                                    <td class="table-groupname td-overflow-txt">
-                                        <img
-                                            src="images/Group_icon.svg"
-                                            alt="grp_icon"
-                                        />
-                                        <a
-                                            href="#"
-                                            title="ABC Security GroupGroup2"
-                                            >ABC Security GroupGroup2</a
-                                        >
-                                    </td>
-                                    <td class="d-none">
-                                        <i
-                                            class="fa fa-user"
-                                            aria-hidden="true"
-                                        ></i>
-                                        &nbsp;&nbsp; <u>John Smith</u>
-                                    </td>
-                                    <td>08/03/2021</td>
-                                    <td class="text-align-center">
-                                        <button>+ Join</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
                                     </td>
                                     <td class="table-groupname td-overflow-txt">
                                         <img
@@ -387,7 +391,7 @@
                                 </tr>
                                 <tr>
                                     <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
                                     </td>
                                     <td class="table-groupname td-overflow-txt">
                                         <img
@@ -410,7 +414,7 @@
                                 </tr>
                                 <tr>
                                     <td class="inputcheckbox-td">
-                                        <input type="checkbox" id="checkbox" class="checkbox"/>
+                                        <input type="checkbox" id="checkbox" class="checkbox" name="checkbox"/>
                                     </td>
                                     <td class="table-groupname td-overflow-txt">
                                         <img
@@ -553,11 +557,11 @@
                         <span
                             >Showing 10-20 | GoTo <input /> |
                             <img
-                                style="margin-left: 4px"
+                                style="margin-left: 0.25rem"
                                 src="images/Arrow_back.svg"
                                 alt="img!"
                             />
-                            <strong class="color-pink" style="margin: 0px 4px"
+                            <strong class="color-pink" style="margin: 0px 0.25rem"
                                 >1</strong
                             >
                             2 3 4 5</span
