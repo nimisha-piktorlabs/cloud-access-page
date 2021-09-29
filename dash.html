@@ -250,7 +250,7 @@
                                         />
                                     </th>
                                     <th class="th-grpname">GROUP NAME
-                                        <img src="images/sorting.svg" alt="img" onclick="sortTable()">
+                                        <a href="#" onclick="sortTable()"><img src="images/sorting.svg" alt="img" ></a>
                                     </th>
                                     <th class="d-none">GROUP OWNER</th>
                                     <th class="d-none createdon-tb-d-none">
@@ -556,8 +556,8 @@
                         </table>
                     </div>
                     <div class="tfooter">
-                        <span
-                            >Showing 10-20 | GoTo <input /> |
+                        <div class="pageno"
+                            >Showing 10-20 | GoTo <input type="text" onkeyup="inputGotoPage()" id="inputNo"/> |
                             <!-- <img
                                 style="margin-left: 0.25rem"
                                 src="images/Arrow_back.svg"
@@ -571,8 +571,8 @@
                             <ul id="tfooterul" class="tfooterul">
 
                             </ul>
-                            <i class="fal fa-angle-left" id="nxt"></i>
-                            </span>
+                            <i class="fal fa-angle-right" id="nxt"></i>
+                        </div>
                     </div>
                 </div>
             </section>

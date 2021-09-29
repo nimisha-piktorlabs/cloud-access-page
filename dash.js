@@ -8,8 +8,25 @@ let ul = document.getElementById("tfooterul");
 let nxt = document.getElementById("nxt");
 let prev = document.getElementById("prev");
 let tbody = document.getElementById("tbodyId");
-let per_page = 7;
-let pages = Math.ceil(tbodyRowCount/per_page);
+let tbldata = [
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['Alexa Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['Berglunds Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['Alexa Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['James Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  ['ABC Security GroupGroup2Group2','John Smith','08/03/2021'],
+  
+]
+let arrlen =tbldata.length;
+let per_page = 10;
+let pages = Math.ceil(arrlen/per_page);
 console.log(pages)
 for(var i=1;i<=pages;i++){
   let li = document.createElement("li");
@@ -38,18 +55,50 @@ prev.addEventListener("click", function(){
  function loadDataSet(count){
   let stop =count * per_page;
   let start = stop - per_page;
-  if(start + 1 >= tbodyRowCount){
+  if(start + 1 >= arrlen){
     alert("no more next");
     return 0;
   }
-  // tbody.innerHTML ="";
+   tbody.innerHTML ="";
   
-let ar_slice =activities.slice(start,stop)
+let ar_slice =tbldata.slice(start,stop)
    for(let i=0;i<ar_slice.length;i++){
     
     createtr(ar_slice[i]);
    }
 
+}
+function createtr(j){
+  let tr = document.createElement("tr");
+  let td0 = document.createElement("td");
+  td0.setAttribute("class","inputcheckbox-td");
+  td0.innerHTML = '<input type="checkbox" id="checkbox" class="checkbox" name="checkbox" />';
+
+  let td1 = document.createElement("td");
+  td1.innerHTML = '<img src="images/Group_icon.svg" alt="grp_icon"/><a href="#"  title="ABC Security GroupGroup2Group2"  >' + j[0] +'</a>' ;
+  td1.setAttribute("class","table-groupname td-overflow-txt");
+  let td2 = document.createElement("td");
+  td2.setAttribute("class","d-none");
+  td2.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp; <u>'+ j[1] +'</u>';
+  let td3 = document.createElement("td");
+  td3.innerHTML = j[2];
+  let td4 = document.createElement("td");
+  td4.setAttribute("class","text-align-center");
+  td4.innerHTML = ' <button>+ Join</button>';
+  
+  tr.appendChild(td0);
+  tr.appendChild(td1);
+  tr.appendChild(td2);
+  tr.appendChild(td3);
+  
+  tr.appendChild(td4);
+  tbody.appendChild(tr);
+}
+function inputGotoPage() {
+  let inputval = document.getElementById("inputNo");
+  let inputNo = inputval.value;
+  console.log(inputNo);
+  gotoPage(inputNo);
 }
 function gotoPage(go){
   count = go;
@@ -133,11 +182,13 @@ function showAside() {
 // }
 
 //  table sort
+
 function sortTable() {
-  var table, rows, switching, i, x, y, shouldSwitch;
+  let table, rows, i, x, y,switching ,shouldSwitch,sortorder,count=0;
   table = document.getElementById("table");
-  
   switching = true;
+   //setting the sort order
+   sortorder = "ascending";
   /*Make a loop that will continue until
   no switching has been done:*/
   while (switching) {
@@ -154,23 +205,43 @@ function sortTable() {
       one from current row and one from the next:*/
       x = rows[i].getElementsByTagName("TD")[1];
       y = rows[i + 1].getElementsByTagName("TD")[1];
-     
+      console.log("x is" + x.innerText);
+      console.log("y is" + y.innerText);
       //check if the two rows should switch place:
-      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-        //if so, mark as a switch and break the loop:
-        shouldSwitch = true;
-        
-        break;
+      if(sortorder == "ascending"){
+        if (x.innerText.toLowerCase() > y.innerText.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          
+          break;
+        }
       }
-    }
+      else if(sortorder == "decending"){
+        if (x.innerText.toLowerCase() < y.innerText.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+     
+      }
     if (shouldSwitch) {
-      console.log("entered");
+      
       /*If a switch has been marked, make the switch
       and mark that a switch has been done:*/
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
+      count++;
     }
-  }
+    else if(sortorder == "ascending" && count== 0){
+        sortorder = "decending";
+        switching = true;
+      
+    }
+    
+    console.log("switch val" + switching);
+   }
+  
 }
 
 
