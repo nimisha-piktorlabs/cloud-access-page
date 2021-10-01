@@ -59,6 +59,11 @@ aside {
     width: 13.75rem;
     display: flex;
     flex-direction: column;
+    /* mobile view */
+    z-index: 1;
+    transition: all 0.5s ease-in;
+    background-color: white;
+    height: 100%;
 }
 aside h4 {
     font-size: 0.68rem;
@@ -510,6 +515,9 @@ input.checkbox:hover  {
     width: 1.5rem;
     height: 1rem;
     margin: 0px 5px;
+    outline: none;
+    text-align: center;
+    font-size: 0.625rem;
 }
 .tfooterul{
     display: flex;
@@ -528,8 +536,18 @@ input.checkbox:hover  {
     .header-right {
         padding: 0px 0px;
     }
-    .hide-mobile {
+    .d-none{
         display: none;
+    }
+    .hide-mobile {
+        /* display: none; */
+        /* mobile view aside */
+        transform: translate(-200%);
+    transition: all 0.5s ease-out;
+    position: absolute;
+     background-color: white;
+
+    
     }
     #main {
         width: 100% !important;
@@ -572,8 +590,12 @@ input.checkbox:hover  {
     position: absolute;
     z-index: 1;
     background-color: white;
-    box-shadow:0 1px 13px 11px rgb(10 9 9 / 10%);
+    box-shadow:1px 19px 13px 11px rgb(10 9 9 / 10%);
     height: 100%;
+    /* mobile view aside */
+    transform: translate(1%);
+    /* transform: translate(-200%);
+    transition: all 0.3s ease-in-out; */
 }
 }
 /* media query */
